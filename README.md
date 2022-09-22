@@ -24,27 +24,27 @@
 
 ### 可操作性功能展示
 
-<https://haojiey.github.io/relation-network-graph/example/operate.html>
+<https://haojiey.github.io/relation-network-graph/example/page/operate.html>
 
 ![](https://github.com/haojiey/relation-network-graph/blob/master/example/assets/images/operate.png)
 
 ### 自定义可操作性功能展示
 
-<https://haojiey.github.io/relation-network-graph/example/operateCustom.html>
+<https://haojiey.github.io/relation-network-graph/example/page/operateCustom.html>
 
 ![](https://github.com/haojiey/relation-network-graph/blob/master/example/assets/images/customoperate.png)
 
 ### 颜色大小配置展示
 
-<https://haojiey.github.io/relation-network-graph/example/colorSize.html>
+<https://haojiey.github.io/relation-network-graph/example/page/colorSize.html>
 
 ### 特定范围内展示
 
-<https://haojiey.github.io/relation-network-graph/example/range.html>
+<https://haojiey.github.io/relation-network-graph/example/page/range.html>
 
 ### 大数据量展示
 
-<https://haojiey.github.io/relation-network-graph/example/bigData.html>
+<https://haojiey.github.io/relation-network-graph/example/page/bigData.html>
 
 
 ## 安装
