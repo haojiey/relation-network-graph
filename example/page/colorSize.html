@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色大小配置展示</title>
+    <!-- Theme CSS -->
+    <link type="text/css" href="../assets/css/theme.css" rel="stylesheet">
+    <!-- Demo CSS - No need to use these in your project -->
+    <link type="text/css" href="../assets/css/demo.css" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+        }
+
+        .graph {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-box {
+            width: 400px;
+            height: 460px;
+            padding: 20px;
+            position: absolute;
+            top: 80px;
+            left: 10px;
+            border-radius: 10px;
+        }
+
+        .graph-box h3 {
+            color: #fff;
+        }
+
+        .graph-box ul.color {
+            overflow: hidden;
+            padding: 0px;
+        }
+
+        .graph-box ul.color li {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            float: left;
+            margin: 15px;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .graph-box ul.color li:first-child {
+            background: rgba(42, 134, 246, 1);
+        }
+
+        .graph-box ul.color li:nth-child(2) {
+            background: rgba(9, 179, 222, 1);
+        }
+
+        .graph-box ul.color li:nth-child(3) {
+            background: rgba(253, 141, 60, 1);
+        }
+
+        .graph-box ul.color li:nth-child(4) {
+            background: rgba(255, 71, 81, 1);
+        }
+
+        .graph-box ul.color li:nth-child(5) {
+            background: rgba(120, 152, 210, 1);
+        }
+
+        .graph-box ul.color li:nth-child(6) {
+            background: rgba(110, 184, 201, 1);
+        }
+
+        .graph-box ul.color li:nth-child(7) {
+            background: rgba(245, 174, 42, 1);
+        }
+
+        .graph-box ul.color li:nth-child(8) {
+            background: rgba(254, 126, 133, 1);
+        }
+
+        .graph-box p {
+            margin: 0px;
+            color: #fff;
+        }
+
+        .graph-box ul.size {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .graph-box ul.size li {
+            float: left;
+            margin: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: linear-gradient(0deg, rgba(0, 122, 255, 0.06), rgba(0, 122, 255, 0.06)), rgb(172, 229, 239);
+            border: 1px solid #008fff;
+
+        }
+
+        .graph-box ul.size li:first-child {
+            width: 38px;
+            height: 38px;
+            margin-top: 26px;
+        }
+
+        .graph-box ul.size li:nth-child(2) {
+            width: 52px;
+            height: 52px;
+            margin-top: 17px;
+        }
+
+        .graph-box ul.size li:nth-child(3) {
+            width: 66px;
+            height: 66px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-tertiary">
+        <div class="collapse navbar-collapse" id="navbar_3">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">基础展示 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./operate.html">可操作性功能展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./operateCustom.html">自定义可操作性功能展示</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">颜色大小配置展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./bigData.html">大数据量展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./range.html">特定范围内展示</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main" style="height:calc(100vh - 62px); background: #e8f2ff;">
+        <div class="graph" id="graphRef"></div>
+    </main>
+    <div class="graph-box bg-tertiary">
+        <p>左键选中节点，再点击颜色或大小选项进行修改</p>
+        <p>关系线亦可，此处无demo</p>
+        <p>当前节点为：<span class="nodeName" style="color:red"></span></p>
+        <h3>颜色</h3>
+        <ul class="color">
+            <li data-value="1"></li>
+            <li  data-value="2"></li>
+            <li  data-value="3"></li>
+            <li  data-value="4"></li>
+            <li  data-value="5"></li>
+            <li  data-value="6"></li>
+            <li  data-value="7"></li>
+            <li data-value="8"></li>
+
+        </ul>
+        <h3>大小</h3>
+        <ul class="size">
+            <li data-value="1"></li>
+            <li data-value="2"></li>
+            <li data-value="3"></li>
+        </ul>
+    </div>
+
+    <!-- Core -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/popper/popper.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- FontAwesome 5 -->
+    <script src="../assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
+    <!-- Page plugins -->
+    <script src="../assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../assets/vendor/input-mask/input-mask.min.js"></script>
+    <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
+    <script src="../assets/vendor/textarea-autosize/textarea-autosize.min.js"></script>
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.js"></script>
+</body>
+
+</html>
+<script src="../lib/relation-network-graph.js"></script>
+<script src="../common/colorSizeData.js"></script>
+<script type="module">
+    // 存储所选节点id
+    let id = '';
+
+    let graph = new RelationNetworkGraph.createContainer({
+        containerName: '#graphRef',
+        width: $('#graphRef').width(),
+        height: $('#graphRef').height(),
+        toolbarData: [],
+        background: '#e8f2ff',
+        isShowMask: false,
+        nodes: nodes,
+        links: links,
+        nodeClick: changeNode
+    })
+
+    function changeNode(node){
+        id= node.id;
+        $('.nodeName').html(node.name)
+    }
+
+    
+
+    $('.color').delegate("li","click",function(e){
+        const color = e.target.dataset.value || '1'
+        if(id){
+            nodes.forEach((item) => {
+            if (item.id == id) {
+              item.color = color;
+            }
+          });
+          // false参数控制布局迭代次数默认true
+          graph.update(false)
+        }
+    })
+    
+    $('.size').delegate("li","click",function(e){
+        const size = e.target.dataset.value || '2'
+        if(id){
+            nodes.forEach((item) => {
+                if (item.id == id) {
+                item.size = Number(size);
+                }
+            });
+          // false参数控制布局迭代次数默认true
+          graph.update(false)
+        }
+    })
+    
+
+
+</script>

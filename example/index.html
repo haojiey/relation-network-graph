@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础展示</title>
+    <!-- Theme CSS -->
+    <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
+    <!-- Demo CSS - No need to use these in your project -->
+    <link type="text/css" href="./assets/css/demo.css" rel="stylesheet">
+    <style>
+        .graph {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-tertiary">
+        <div class="collapse navbar-collapse" id="navbar_3">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">基础展示 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./page/operate.html">可操作性功能展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./page/operateCustom.html">自定义可操作性功能展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./page/colorSize.html">颜色大小配置展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./page/bigData.html">大数据量展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./page/range.html">特定范围内展示</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main" style="height:calc(100vh - 62px); background: #e8f2ff;">
+        <div class="card bg-secondary">
+            <div class="card-body">
+                <p>视图可放大缩小用以zoomOptions控制</p>
+            </div>
+        </div>
+        <div class="graph" id="graphRef"></div>
+    </main>
+
+    <!-- Core -->
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- FontAwesome 5 -->
+    <script src="./assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
+    <!-- Page plugins -->
+    <script src="./assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="./assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="./assets/vendor/input-mask/input-mask.min.js"></script>
+    <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+    <script src="./assets/vendor/textarea-autosize/textarea-autosize.min.js"></script>
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
+<script src="./lib/relation-network-graph.js"></script>
+<script type="text/javascript" src="./mock.js"></script>
+<script src="./common/baseData.js"></script>
+<script type="module">
+    new RelationNetworkGraph.createContainer({
+        containerName: '#graphRef',
+        width: $('#graphRef').width(),
+        height: $('#graphRef').height(),
+        toolbarData: [],
+        background: '#e8f2ff',
+        isShowMask: false,
+        nodes: nodes,
+        links: links,
+    })
+</script>

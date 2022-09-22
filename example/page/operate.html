@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可操作性功能展示</title>
+    <!-- Theme CSS -->
+    <link type="text/css" href="../assets/css/theme.css" rel="stylesheet">
+    <!-- Demo CSS - No need to use these in your project -->
+    <link type="text/css" href="../assets/css/demo.css" rel="stylesheet">
+    <style>
+        .graph {
+            width: 100%;
+            height: 100%;
+        }
+        p{margin:0px}
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-tertiary">
+        <div class="collapse navbar-collapse" id="navbar_3">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">基础展示 </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">可操作性功能展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./operateCustom.html">自定义可操作性功能展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./colorSize.html">颜色大小配置展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./bigData.html">大数据量展示</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./range.html">特定范围内展示</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main" style="height:calc(100vh - 62px); background: #e8f2ff;">
+        <div class="card bg-secondary">
+            <div class="card-body">
+                <h3>操作功能扇形图展示右键节点</h3>
+                <code class="language-html" data-lang="html">
+                   <span>
+                    <p>操作功能都可以在以下Promise方法中添加自定义事件处理（例如：删除节点时需要处理接口）</p>
+                    <p>操作功能时默认的功能不需要再调用接口后重新渲染（自定义功能看情况，需要渲染可以调用实例的update方法，graph.update()）</p>
+                    click: () => {
+                        return new Promise((resolve) => {
+                            //自定义过度操作
+                          resolve(false)
+                        })
+                      }
+                   </span>
+                  </code>
+                <p>连线：两节点之间连接一条关系线，可自定义关系名称（在过度操作中）</p>
+                <p>删除：删除当前节点以及当前节点的关系</p>
+                <p>收起：收起当前节点的下级节点</p>
+                <p>隐藏：隐藏当前节点以及当前节点的关系</p>
+                <p>展开：展开当前节点的下级节点</p>
+                <p>解锁：当点击节点以及拖拽节点后会将节点固定在某一位置，通过释放来解除固定</p>
+            </div>
+        </div>
+        <div class="graph" id="graphRef"></div>
+    </main>
+
+    <!-- Core -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/popper/popper.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- FontAwesome 5 -->
+    <script src="../assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
+    <!-- Page plugins -->
+    <script src="../assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="../assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+    <script src="../assets/vendor/input-mask/input-mask.min.js"></script>
+    <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
+    <script src="../assets/vendor/textarea-autosize/textarea-autosize.min.js"></script>
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.js"></script>
+</body>
+
+</html>
+<script src="../lib/relation-network-graph.js"></script>
+<script src="../common/operateData.js"></script>
+<script type="module">
+    new RelationNetworkGraph.createContainer({
+        containerName: '#graphRef',
+        width: $('#graphRef').width(),
+        height: $('#graphRef').height(),
+        background: '#e8f2ff',
+        isShowMask: false,
+        nodes: nodes,
+        links: links,
+    })
+
+</script>
