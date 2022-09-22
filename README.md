@@ -19,23 +19,32 @@
 ## 在线示例
 
 ### 基础展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/index.html>
 
 ### 可操作性功能展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/operate.html>
+
 ![](https://github.com/haojiey/relation-network-graph/blob/master/example/assets/images/operate.png)
+
 ### 自定义可操作性功能展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/operateCustom.html>
+
 ![](https://github.com/haojiey/relation-network-graph/blob/master/example/assets/images/customoperate.png)
 
 ### 颜色大小配置展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/colorSize.html>
 
 ### 特定范围内展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/range.html>
 
 ### 大数据量展示
-`http://baidu.com`
+
+<https://haojiey.github.io/relation-network-graph/example/bigData.html>
 
 
 ## 安装
@@ -43,11 +52,11 @@
 ### 使用 npm 或 yarn 安装
 
 ```bash
-$ npm install relation-graph --save
+$ npm install relation-network-graph --save
 ```
 
 ```bash
-$ yarn add relation-graph
+$ yarn add relation-network-graph
 ```
 
 ### 使用静态资源
